@@ -2,11 +2,15 @@ var ctx=document.getElementById("cvs").getContext("2d");
 var timercount=200;
 var timerctx;
 var chrmtx=new Array();
-var wait=false;
+var keywait=false;
 window.onload=(function(){
+clck=new Audio("cggsys/audio/pingpong1.mp3");
+alerm=new Audio("cggsys/audio/beep.mp3");
+buzzer=new Audio("cggsys/audio/buzzer.wav");
 //vraminit();
 document.onkeydown=getkeychr;
 document.onkeyup=keyclr;
+document.onmousedown=getmouse;
 init();
 timerctx=setInterval("routine();",timercount);
 });
@@ -28,6 +32,9 @@ alerm.play();
 break;
 case 1:
 clck.play();
+break;
+case 2:
+buzzer.play();
 break;
 default:
 break;
@@ -88,8 +95,12 @@ if(evt==39){keychr="right";}
 if(evt==37){keychr="left";}
 if(evt==40){keychr="down";}
 if(evt==38){keychr="up";}
-if(evt==13){keychr="cr";wait=false;}
-
+if(evt==13){keychr="cr";keywait=false;}
+if(!keywait){keyin(keychr);}
+}
+function getmouse(ev){
+var keychr;
+if(ev.pageX>320){keychr="right";}else{keychr="left";}
 keyin(keychr);
 }
 function keyclr(){
@@ -97,10 +108,7 @@ keychr="";
 }
 function printw(str){
 println(str);
-while(wait){
-var muda=0;
-muda++;
-}
+keywait=true;
 }
 function setchrscreen(){
 var i,j;
