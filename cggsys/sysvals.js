@@ -256,7 +256,7 @@ var chrnum9=new Array(
 0,1,0,0,0,0,1,0,
 0,0,1,1,1,1,1,0,
 0,0,0,0,0,0,1,0,
-0,0,0,1,1,1,0,0
+0,0,1,1,1,1,0,0
 );
 var chr1=new Array(
 0,0,1,1,1,1,0,0,
@@ -379,6 +379,13 @@ var chr17=new Array(
 0,1,1,1,1,1,1,0,
 0,0,0,0,0,0,0,0
 );
+var chr18=new Array(
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,1,1,0,0,0,
+0,0,0,1,1,0,0,0,
+0,0,0,0,0,0,0,0
+);
 
 var inpcode=new Array(
 "!","","#","$","%","&","","(",")","*",
@@ -392,6 +399,7 @@ var inpcode=new Array(
 
 var clck=new Audio("audio/pingpong1.mp3");
 var alerm=new Audio("audio/beep.mp3");
+
 
 var keychr="";
 
